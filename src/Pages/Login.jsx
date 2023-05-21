@@ -3,22 +3,17 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { TiInputCheckedOutline, TiInfo } from "react-icons/ti";
 import { TiInfo } from "react-icons/ti";
-import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
-import {
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { AuthContext } from "../Provider/AuthProvider";
 import backgroundImage from "../assets/rainbow-vortex.svg";
 function Login() {
   const [error, setError] = useState("");
   const { signInUser, auth } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
   const [showPassword, setShowPassword] = useState(false);
 
   const [email, setEmail] = useState("");
@@ -52,15 +47,6 @@ function Login() {
 
   const handleGoogleSingIn = () => {
     signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        console.log(result.user);
-        navigate("/");
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const handleGithubSignIn = () => {
-    signInWithPopup(auth, githubProvider)
       .then((result) => {
         console.log(result.user);
         navigate("/");
@@ -170,16 +156,6 @@ function Login() {
             </span>
           </button>
           <br />
-          <button
-            onClick={handleGithubSignIn}
-            className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white  focus:ring-4 focus:outline-none focus:ring-blue-300"
-          >
-            <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white  rounded-md group-hover:bg-opacity-0">
-              <div className="flex items-center gap-2">
-                <FaGithub /> Login with github
-              </div>
-            </span>
-          </button>
         </div>
       </form>
     </div>
