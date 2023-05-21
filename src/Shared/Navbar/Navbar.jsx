@@ -2,10 +2,15 @@ import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 // import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { FaBars } from "react-icons/fa";
-import ActiveLink from "./ActiveLink";
-import { AuthContext } from "../Provider/AuthProvider";
+import ActiveLink from "../ActiveLink";
+import { AuthContext } from "../../Provider/AuthProvider";
 import { signOut } from "firebase/auth";
 import { Link } from "react-router-dom";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import { AwesomeButton } from "react-awesome-button";
+import "react-awesome-button/dist/styles.css";
+
+import "./Navbar.css";
 
 export default function Navbar() {
   const { user, auth } = useContext(AuthContext);
@@ -20,20 +25,23 @@ export default function Navbar() {
     <Disclosure as="nav" className="">
       {({ open }) => (
         <>
-          <div className="mx-auto px-2 sm:px-6 lg:px-8 bg-green-200 py-3">
+          <div className="mx-auto px-2 sm:px-6 lg:px-8 text-white font-font4 bg-primary py-3">
             <div className="flex justify-between h-16">
               <div className="flex">
                 <div className="flex-shrink-0 flex items-center">
                   <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    className="block lg:hidden h-12 w-auto rounded-full border-4 border-accent"
+                    src="https://i.ibb.co/8zm473R/geometry-minimal-cube-logo-concept-260nw-1048900538.jpg"
                     alt="Logo"
                   />
                   <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+                    className="hidden lg:block h-14 w-auto rounded-full border-4 border-accent"
+                    src="https://i.ibb.co/8zm473R/geometry-minimal-cube-logo-concept-260nw-1048900538.jpg"
                     alt="Logo"
                   />
+                  <p className="hidden md:inline font-font1 text-2xl mx-2 font-semibold">
+                    Joy Full Play Things
+                  </p>
                 </div>
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-4">
                   <ActiveLink to="/">Home</ActiveLink>
@@ -53,6 +61,21 @@ export default function Navbar() {
                           className="h-10 w-10 rounded-full"
                           src={user.photoURL}
                           alt=""
+                          id="userProfile"
+                        />
+                        <ReactTooltip
+                          anchorId="userProfile"
+                          place="bottom"
+                          variant="success"
+                          content={user.displayName}
+                          className="font-bold text-text z-10"
+                          style={{
+                            fontWeight: "bold",
+                            borderRadius: "10px",
+                            fontSize: "15px",
+                            backgroundColor: "#45A29E",
+                            padding: "7px",
+                          }}
                         />
                       </Menu.Button>
                     </div>
@@ -112,7 +135,16 @@ export default function Navbar() {
                 </div>
               ) : (
                 <Link to="/login">
-                  <button className="btn">login</button>
+                  <div className="flex items-center justify-center mt-3">
+                    <AwesomeButton
+                      // type="twitter"
+                      size="medium"
+                      className="aws-btn"
+                    >
+                      {" "}
+                      Login
+                    </AwesomeButton>
+                  </div>
                 </Link>
               )}
               <div className="-mr-2 flex items-center sm:hidden">

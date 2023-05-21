@@ -4,20 +4,29 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  theme: {
+    fontFamily: {
+      font1: ['Rancho', "cursive"],
+      font2: ['EB Garamond', "serif"],
+      font3: ['Poppins', "sans-serif"],
+      font4: ['Work Sans', "sans-serif"]
+
+    },
+  },
   daisyui: {
     themes: [
       {
         mytheme: {
 
-          "primary": "#570DF8",
+          "primary": "#0B0C10",
 
-          "secondary": "#F000B8",
+          "secondary": "#66FCF1",
 
-          "accent": "#37CDBE",
+          "accent": "#45A29E",
 
           "neutral": "#3D4451",
 
-          "base-100": "#FFFFFF",
+          "text": "#C5C6C7",
 
           "info": "#3ABFF8",
 

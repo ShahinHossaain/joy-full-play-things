@@ -48,18 +48,6 @@ function Login() {
             .join(" ")
         )
       );
-    // TODO: Add logic to submit the form data
-
-    //     const allData = { email, password };
-    //     fetch("http://localhost:3000/toys", {
-    //       method: "POST",
-    //       headers: {
-    //         "content-type": "application/json",
-    //       },
-    //       body: JSON.stringify(allData),
-    //     })
-    //       .then((res) => res.json())
-    //       .then((data) => console.log(data));
   };
 
   const handleGoogleSingIn = () => {
