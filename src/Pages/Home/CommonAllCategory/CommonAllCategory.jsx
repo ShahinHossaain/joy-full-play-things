@@ -1,17 +1,31 @@
+import { AwesomeButton } from "react-awesome-button";
+
 const CommonAllCategory = ({ toy }) => {
   // console.log(toy);
   const { pictureUrl, toyName, price, rating } = toy;
   return (
-    <div className="card card-side bg-slate-300 shadow-xl">
+    <div className="card card-side bg-primary shadow-xl">
       <figure className="w-2/5">
         <img src={pictureUrl} alt="Movie" className="h-full w-full" />
       </figure>
       <div className="card-body">
-        <h2>{toyName}</h2>
-        <p>Price : {price}</p>
-        <p>Rating : {rating}</p>
+        <h2 className="text-xl font-bold font-font3 text-secondary">
+          {toyName}
+        </h2>
+        <p>
+          <span className="text-lg font-medium font-font4 text-secondary">
+            Rating
+          </span>{" "}
+          : {rating}
+        </p>
+        <p>
+          <span className="text-lg font-medium font-font4 text-secondary">
+            Price
+          </span>{" "}
+          : {price}
+        </p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Details</button>
+          <AwesomeButton>Details</AwesomeButton>
         </div>
       </div>
     </div>

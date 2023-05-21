@@ -8,8 +8,11 @@ import ScienceCategoryToys from "../ScienceCategoryToys/ScienceCategoryToys";
 const ToyCategories = () => {
   return (
     <div className="text-center mt-32">
+      <p className="text-center text-6xl font-bold font-font3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-12">
+        Shop By Category
+      </p>
       <Tabs>
-        <TabList>
+        <TabList className="font-font2 font-bold text-lg mb-5 text-black bg-accent mx-12 rounded-2xl">
           <Tab>Math Toys</Tab>
           <Tab>Engineering toys</Tab>
           <Tab> Science Toys</Tab>
