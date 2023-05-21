@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { AwesomeButton } from "react-awesome-button";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
@@ -219,12 +220,11 @@ const AddToys = () => {
           ></textarea>
         </div>
 
-        <button
-          type="submit"
-          className="w-full px-4 py-2 text-sm font-semibold text-white bg-blue-500 rounded-sm hover:bg-blue-600"
-        >
-          Submit
-        </button>
+        <div className="text-center">
+          <button type="submit">
+            <AwesomeButton>Submit</AwesomeButton>
+          </button>
+        </div>
       </form>
     </div>
   );

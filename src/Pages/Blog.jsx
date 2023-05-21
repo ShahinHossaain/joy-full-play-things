@@ -6,10 +6,10 @@ const Blogs = () => {
     <div className="mt-10">
       <div ref={ref}>
         <p className="text-center text-3xl md:text-5xl font-sans font-bold">
-          <span className="text-green-600">F</span>AQ
+          <span className="text-secondary">F</span>AQ
         </p>
-        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-green-100 ">
-          <p className="text-green-600 text-lg md:text-xl font-mono font-medium mb-4">
+        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-primary ">
+          <p className="text-secondary text-lg md:text-xl font-mono font-medium mb-4">
             1)) What is an access token and refresh token? How do they work and
             where should we store them on the client-side?
           </p>
@@ -51,8 +51,8 @@ const Blogs = () => {
             being exposed to malicious actors.
           </p>
         </div>
-        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-green-100">
-          <p className="text-green-600 text-lg md:text-xl font-mono font-medium mb-4">
+        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-primary">
+          <p className="text-secondary text-lg md:text-xl font-mono font-medium mb-4">
             2)) Compare SQL and NoSQL databases?
           </p>
           <p>
@@ -82,8 +82,8 @@ const Blogs = () => {
             on-the-fly without downtime.
           </p>
         </div>
-        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-green-100">
-          <p className="text-green-600 text-lg md:text-xl font-mono font-medium mb-4">
+        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-primary">
+          <p className="text-secondary text-lg md:text-xl font-mono font-medium mb-4">
             3))What is express js? What is Nest JS (google it)?
           </p>
           <p>
@@ -109,8 +109,8 @@ const Blogs = () => {
             modern JavaScript and TypeScript best practices.
           </p>
         </div>
-        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-green-100">
-          <p className="text-green-600 text-lg md:text-xl font-mono font-medium mb-4">
+        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-primary">
+          <p className="text-secondary text-lg md:text-xl font-mono font-medium mb-4">
             4)) What is MongoDB aggregate and how does it work (google it)?
           </p>
           <p>

@@ -12,7 +12,7 @@ const MathCategoryToys = () => {
   }, []);
   return (
     <div>
-      <div className="grid grid-cols-2 gap-5 mx-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-12">
         {toys &&
           toys.map((toy, index) => (
             <CommonAllCategory key={index} toy={toy}></CommonAllCategory>

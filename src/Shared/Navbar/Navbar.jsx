@@ -40,7 +40,7 @@ export default function Navbar() {
                     src="https://i.ibb.co/8zm473R/geometry-minimal-cube-logo-concept-260nw-1048900538.jpg"
                     alt="Logo"
                   />
-                  <p className="hidden md:inline font-font1 text-2xl mx-2 font-semibold">
+                  <p className="hidden md:inline font-font1 text-2xl mx-2 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-secondary">
                     Joy Full Play Things
                   </p>
                 </div>
@@ -105,14 +105,14 @@ export default function Navbar() {
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="#"
+                              <Link
+                                to="/myToys"
                                 className={`${
                                   active ? "bg-gray-100" : ""
                                 } block px-4 py-2 text-sm text-gray-700`}
                               >
-                                Settings
-                              </a>
+                                My Toys
+                              </Link>
                             )}
                           </Menu.Item>
                           <Menu.Item>

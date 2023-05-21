@@ -1,10 +1,18 @@
+import { useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
+import ToyDetails from "../../../Shared/ToyDetails/ToyDetails";
 
 const CommonAllCategory = ({ toy }) => {
   // console.log(toy);
+  const [isOpen, setIsOpen] = useState(false);
   const { pictureUrl, toyName, price, rating } = toy;
+
+  const handleDetails = () => {
+    setIsOpen(true);
+  };
   return (
     <div className="card card-side bg-primary shadow-xl">
+      {isOpen && <ToyDetails toy={toy} setIsOpen={setIsOpen}></ToyDetails>}
       <figure className="w-2/5">
         <img src={pictureUrl} alt="Movie" className="h-full w-full" />
       </figure>
@@ -25,7 +33,7 @@ const CommonAllCategory = ({ toy }) => {
           : {price}
         </p>
         <div className="card-actions justify-end">
-          <AwesomeButton>Details</AwesomeButton>
+          <AwesomeButton onClick={handleDetails}>Details</AwesomeButton>
         </div>
       </div>
     </div>
