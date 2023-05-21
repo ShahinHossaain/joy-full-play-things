@@ -4,6 +4,8 @@ import Gallary from "../Gallary/Gallary";
 import ToyCategories from "../ToyCategories/ToyCategories";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Top5 from "../Top5/Top5";
+import Comment from "../Comment/Comment";
 
 const Home = () => {
   useEffect(() => {
@@ -21,7 +23,10 @@ const Home = () => {
         </p>
       </div>
       <Gallary></Gallary>
+
+      <Top5></Top5>
       <ToyCategories></ToyCategories>
+      <Comment></Comment>
     </div>
   );
 };
