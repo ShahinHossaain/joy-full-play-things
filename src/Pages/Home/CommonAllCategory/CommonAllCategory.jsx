@@ -9,6 +9,7 @@ const CommonAllCategory = ({ toy }) => {
 
   const handleDetails = () => {
     setIsOpen(true);
+    console.log("click");
   };
   return (
     <div className="card card-side bg-primary shadow-xl">
@@ -32,8 +33,8 @@ const CommonAllCategory = ({ toy }) => {
           </span>{" "}
           : {price}
         </p>
-        <div className="card-actions justify-end">
-          <AwesomeButton onClick={handleDetails}>Details</AwesomeButton>
+        <div className="card-actions justify-end" onClick={handleDetails}>
+          <AwesomeButton>Details</AwesomeButton>
         </div>
       </div>
     </div>

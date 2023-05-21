@@ -1,84 +1,61 @@
-const ToyDetails = ({ isOpen, closeModal, toy }) => {
-  if (!isOpen) return null;
-
+const ToyDetails = ({ toy, setIsOpen }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="bg-white p-6 rounded-lg shadow-xl z-10">
-        <div className="flex justify-between mb-4">
-          <h2 className="text-xl font-bold">{toy.name}</h2>
+    <div className="fixed inset-0 flex items-center justify-center z-50 ">
+      <div className="modal-overlay fixed inset-0 bg-gray-500 opacity-75 "></div>
+
+      <div className="modal-container bg-white w-1/2 rounded shadow-lg z-50">
+        <div className="modal-header flex items-center justify-between px-4 py-2 bg-gray-200 rounded-t">
+          <h5 className="text-lg font-bold text-black">Toy Details</h5>
           <button
+            type="button"
             className="text-gray-500 hover:text-gray-700"
-            onClick={closeModal}
+            onClick={() => setIsOpen(false)}
           >
-            Close
+            <svg
+              className="fill-current h-7 w-7"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Close</title>
+              <path d="M14.348 14.849l.707-.707L10.707 10l4.348-4.142-.707-.707L10 9.293 5.651 4.142 4.944 4.85 9.293 9l-4.348 4.142.707.707L10 10.707l4.349 4.142z"></path>
+            </svg>
           </button>
         </div>
-        <img src={toy.pictureUrl} alt={toy.name} className="mb-4" />
-        <div>
-          <p>
-            <span className="font-bold">Seller Name:</span> {toy.sellerName}
-          </p>
-          <p>
-            <span className="font-bold">Seller Email:</span> {toy.sellerEmail}
-          </p>
-          <p>
-            <span className="font-bold">Sub-category:</span> {toy.subcategory}
-          </p>
-          <p>
-            <span className="font-bold">Price:</span> {toy.price}
-          </p>
-          <p>
-            <span className="font-bold">Rating:</span> {toy.rating}
-          </p>
-          <p>
-            <span className="font-bold">Available Quantity:</span>{" "}
-            {toy.quantity}
-          </p>
-          <p>
-            <span className="font-bold">Description:</span> {toy.description}
-          </p>
+
+        <div className="modal-body bg-primary px-4 py-2">
+          <img
+            src={toy.pictureUrl}
+            alt={toy.name}
+            className="mb-4 h-72 mx-auto w-96"
+          />
+          <div className="text-secondary">
+            <p>
+              <span className="font-bold">Seller Name:</span> {toy.sellerName}
+            </p>
+            <p>
+              <span className="font-bold">Seller Email:</span> {toy.sellerEmail}
+            </p>
+            <p>
+              <span className="font-bold">Sub-category:</span> {toy.subCategory}
+            </p>
+            <p>
+              <span className="font-bold">Price:</span> {toy.price}
+            </p>
+            <p>
+              <span className="font-bold">Rating:</span> {toy.rating}
+            </p>
+            <p>
+              <span className="font-bold">Available Quantity:</span>{" "}
+              {toy.availableQuantity}
+            </p>
+            <p>
+              <span className="font-bold">Description:</span> {toy.description}
+            </p>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default ToyDetails;
-
-// const App = () => {
-//   const [modalOpen, setModalOpen] = useState(false);
-
-//   const openModal = () => {
-//     setModalOpen(true);
-//   };
-
-//   const closeModal = () => {
-//     setModalOpen(false);
-//   };
-
-//   const toy = {
-//     pictureUrl: "https://example.com/toy-image.jpg",
-//     name: "Toy Name",
-//     sellerName: "Seller Name",
-//     sellerEmail: "seller@example.com",
-//     subcategory: "Sub-category",
-//     price: "$19.99",
-//     rating: 4.5,
-//     quantity: 10,
-//     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae enim non lacus fermentum finibus.",
-//   };
-
-//   return (
-//     <div>
-//       <button
-//         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-//         onClick={openModal}
-//       >
-//         View Toy Details
-//       </button>
-//       <Modal isOpen={modalOpen} closeModal={closeModal} toy={toy} />
-//     </div>
-//   );
-// };
-
-// export default App;
