@@ -1,4 +1,4 @@
-const ToyDetails = ({ toy, setIsOpen }) => {
+const AllToysDetails = ({ toy, setOpen }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 ">
       <div className="modal-overlay fixed inset-0 bg-gray-500 opacity-75 "></div>
@@ -10,7 +10,8 @@ const ToyDetails = ({ toy, setIsOpen }) => {
             type="button"
             className="text-gray-500 hover:text-gray-700"
             onClick={() => {
-              setIsOpen(false);
+              console.log("click");
+              setOpen(false);
             }}
           >
             <svg
@@ -60,4 +61,4 @@ const ToyDetails = ({ toy, setIsOpen }) => {
   );
 };
 
-export default ToyDetails;
+export default AllToysDetails;

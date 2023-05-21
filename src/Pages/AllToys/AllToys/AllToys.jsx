@@ -5,7 +5,7 @@ const AllToys = () => {
   const toys = useLoaderData();
   // console.log(toys);
   return (
-    <div>
+    <div className="my-10">
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
           {/* head */}
