@@ -8,37 +8,50 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import "./Gallary.css";
-
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
 import { useEffect, useState } from "react";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const Gallary = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   const [toys, setToys] = useState(null);
   // console.log(toys);
   useEffect(() => {
-    fetch("https://joy-full-play-things-server.vercel.app/toys")
+    fetch("https://joy-full-play-things-server.vercel.app/toys ")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
   return (
-    <div className="flex flex-col md:flex-row items-center">
-      <div className="mx-auto my-5">
+    <div
+      className="flex flex-col md:flex-row items-center overflow-hidden bg-neutral mt-12 rounded-2xl card shadow-2xl"
+      data-aos="fade-up"
+    >
+      <div className="mx-auto my-5" data-aos="fade-up">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1PlBgacnSx02iaku6b_wo8tboQU_nZHFRDQ&usqp=CAU"
+          src="https://i.ibb.co/19h36MN/robot-model-icon-cute-cartoon-character-sketch-hum.jpg"
           alt=""
           className="animate-pulse transform hover:translate-y-1 hover:scale-110 transition duration-500 ease-in-out rounded-3xl w-full"
         />
-        <p className="text-2xl font-bold o_font2 text-center">
-          <span className="text-green-500">
-            <span className="text-3xl">Made</span> By
-          </span>{" "}
-          Our <span className="text-red-600 text-3xl block">Honorable</span>{" "}
-          CHEFS...
-        </p>
+        <div>
+          <p className="text-2xl font-bold o_font2 text-center mt-4">
+            <span className=" text-transparent font-font2 text-3xl bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-600 ">
+              {" "}
+              Connect With Our Gallery
+            </span>
+          </p>
+        </div>
       </div>
 
-      <div className="md:w-2/3">
+      <div className="md:w-2/3" data-aos="fade-left">
         <Swiper
           effect={"coverflow"}
           grabCursor={true}

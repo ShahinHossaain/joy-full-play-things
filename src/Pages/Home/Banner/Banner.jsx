@@ -4,70 +4,103 @@ import "react-awesome-slider/dist/styles.css";
 import "react-awesome-slider/dist/custom-animations/open-animation.css";
 import "./Banner.css";
 import "./Banner.scss";
+import { AwesomeButton } from "react-awesome-button";
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
+  const backgroundImage1 =
+    "https://images.all-free-download.com/images/graphiclarge/toys_icons_background_various_multicolored_icons_repeating_design_6830621.jpg";
+  const backgroundImage2 =
+    "https://images.all-free-download.com/images/graphiclarge/paper_plane_icons_3d_design_flying_objects_6833981.jpg";
+  const backgroundImage3 =
+    "https://images.all-free-download.com/images/graphiclarge/toy_train_background_colored_flat_repeating_design_6830403.jpg";
   return (
     <div>
       <AutoplaySlider
         play={true}
         cancelOnInteraction={false} // should stop playing on user interaction
-        interval={9000}
+        interval={6000}
         className="aws"
         animation="openAnimation"
       >
         <div data-src="" className="bg-natural h-full w-full">
-          <div className="flex items-center justify-center p-10">
+          <div
+            className="flex items-center justify-center p-10"
+            style={{
+              backgroundImage: `url(${backgroundImage1})`,
+              height: "100%",
+            }}
+          >
             <img
               src="https://images.all-free-download.com/images/graphiclarge/childhood_background_boy_toys_icons_cartoon_design_6838190.jpg"
               alt=""
-              className="ml-16 rounded-3xl"
+              className="hidden md:inline-block ml-16 rounded-3xl"
             />
-            <div className="relative box w-1/2 right-32 rounded-3xl top-8 p-10 bg-slate-700 opacity-90  text-white">
-              <p className="text-5xl font-font2">
+            <div className="md:relative box w-1/2 right-32 rounded-3xl top-8 p-10 bg-slate-700 opacity-90  text-white">
+              <p className="text-4xl md:text-5xl font-font2">
                 Welcome to, <br />{" "}
-                <span className="block font-font1 my-10">
+                <span className="block font-font1 my-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
                   Joy Full Play Things
                 </span>{" "}
-                website{" "}
+                website,{" "}
+                <Link to="/allToys">
+                  <AwesomeButton>Toys Details</AwesomeButton>
+                </Link>
               </p>
             </div>
           </div>
         </div>
-        <div data-src="https://media.istockphoto.com/id/1072351298/photo/young-girl-playing-with-educational-toys.jpg?b=1&s=170667a&w=0&k=20&c=Z8lD1zUt6v49FaSho54qnuw-VrR8EsfDCYHQfWp86PQ=">
-          <div className="bg-gradient-to-r w-100% h-full from-cyan-500 to-blue-500 in">
-            <div className="relative w-1/2 right-32 top-8 p-10 bg-slate-700 opacity-90 rounded-xl text-white">
-              <p className="text-5xl font-bold">
-                Affordable Price For Car Servicing
+        <div data-src="" className="bg-natural h-full w-full">
+          <div
+            className="flex items-center justify-center p-10"
+            style={{
+              backgroundImage: `url(${backgroundImage2})`,
+              height: "100%",
+            }}
+          >
+            <img
+              src="https://images.all-free-download.com/images/graphiclarge/joyful_boy_drawing_toys_icons_cartoon_design_6832590.jpg"
+              alt=""
+              className="hidden md:inline-block ml-16 rounded-3xl"
+            />
+            <div className="md:relative box w-1/2 right-32 rounded-3xl top-8 p-10 bg-slate-700 opacity-90  text-white">
+              <p className="text-3xl md:text-5xl font-font2">
+                Your, <br />{" "}
+                <span className="block text-4xl md:text-6xl font-font1 my-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                  One-Stop Shop
+                </span>{" "}
+                for Fun,{" "}
+                <Link to="/myToys">
+                  <AwesomeButton>See Own Toys</AwesomeButton>
+                </Link>
               </p>
-              <p className="my-5">
-                There are many variations of passages of available, but the
-                majority have suffered alteration in some form
-              </p>
-              <div className="flex gap-4">
-                <button className="btn bg-orange-500">Discover More</button>
-                <button className="btn btn-outline btn-accent">
-                  Latest Project
-                </button>
-              </div>
             </div>
           </div>
         </div>
-        <div data-src="https://media.istockphoto.com/id/1072351298/photo/young-girl-playing-with-educational-toys.jpg?b=1&s=170667a&w=0&k=20&c=Z8lD1zUt6v49FaSho54qnuw-VrR8EsfDCYHQfWp86PQ=">
-          <div className="bg-gradient-to-r w-100% h-full from-cyan-500 to-blue-500 in">
-            <div className="relative w-1/2 right-32 top-8 p-10 bg-slate-700 opacity-90 rounded-xl text-white">
-              <p className="text-5xl font-bold">
-                Affordable Price For Car Servicing
+        <div data-src="" className="bg-natural h-full w-full">
+          <div
+            className="flex items-center justify-center p-10"
+            style={{
+              backgroundImage: `url(${backgroundImage3})`,
+              height: "100%",
+            }}
+          >
+            <img
+              src="https://images.all-free-download.com/images/graphiclarge/childhood_background_joyful_boy_toy_icons_cartoon_design_6838007.jpg"
+              alt=""
+              className="hidden md:inline-block ml-16 rounded-3xl"
+            />
+            <div className="md:relative box w-1/2 right-32 rounded-3xl top-8 p-10 bg-slate-700 opacity-90  text-white">
+              <p className="text-5xl font-font2">
+                <span className="block font-font1 my-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                  A World of, <br />
+                  Toys and Delight
+                </span>{" "}
+                <Link to="/addToy">
+                  <AwesomeButton>Add Your Toy</AwesomeButton>
+                </Link>
               </p>
-              <p className="my-5">
-                There are many variations of passages of available, but the
-                majority have suffered alteration in some form
-              </p>
-              <div className="flex gap-4">
-                <button className="btn bg-orange-500">Discover More</button>
-                <button className="btn btn-outline btn-accent">
-                  Latest Project
-                </button>
-              </div>
             </div>
           </div>
         </div>

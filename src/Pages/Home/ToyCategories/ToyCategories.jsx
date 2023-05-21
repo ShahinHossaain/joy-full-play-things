@@ -7,7 +7,7 @@ import ScienceCategoryToys from "../ScienceCategoryToys/ScienceCategoryToys";
 
 const ToyCategories = () => {
   return (
-    <div className="text-center">
+    <div className="text-center mt-32">
       <Tabs>
         <TabList>
           <Tab>Math Toys</Tab>

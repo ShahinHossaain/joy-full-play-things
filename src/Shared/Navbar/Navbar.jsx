@@ -2,6 +2,7 @@ import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 // import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { FaBars } from "react-icons/fa";
+import { HiBackspace } from "react-icons/hi";
 import ActiveLink from "../ActiveLink";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { signOut } from "firebase/auth";
@@ -151,7 +152,7 @@ export default function Navbar() {
                 <Disclosure.Button className="bg-gray-800 p-2 rounded-md inline-flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <FaBars className="block h-6 w-6" aria-hidden="true" />
+                    <HiBackspace className="block h-6 w-6" aria-hidden="true" />
                   ) : (
                     <FaBars className="block h-6 w-6" aria-hidden="true" />
                   )}
@@ -161,7 +162,7 @@ export default function Navbar() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="pt-2 pb-3 space-y-1">
+            <div className="pt-2 pb-3 space-y-1 bg-primary">
               <ActiveLink to="/">Home</ActiveLink>
               <ActiveLink to="/allToys">All Toys</ActiveLink>
               <ActiveLink to="/myToys">My Toys</ActiveLink>
