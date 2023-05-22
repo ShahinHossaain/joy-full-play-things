@@ -1,0 +1,24 @@
+<img src={toy.pictureUrl} alt={toy.name} className="mb-4" />
+        <div>
+          <p>
+            <span className="font-bold">Seller Name:</span> {toy.sellerName}
+          </p>
+          <p>
+            <span className="font-bold">Seller Email:</span> {toy.sellerEmail}
+          </p>
+          <p>
+            <span className="font-bold">Sub-category:</span> {toy.subcategory}
+          </p>
+          <p>
+            <span className="font-bold">Price:</span> {toy.price}
+          </p>
+          <p>
+            <span className="font-bold">Rating:</span> {toy.rating}
+          </p>
+          <p>
+            <span className="font-bold">Available Quantity:</span>{" "}
+            {toy.quantity}
+          </p>
+          <p>
+            <span className="font-bold">Description:</span> {toy.description}
+          </p>

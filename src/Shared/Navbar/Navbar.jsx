@@ -47,8 +47,8 @@ export default function Navbar() {
                 <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-4">
                   <ActiveLink to="/">Home</ActiveLink>
                   <ActiveLink to="/allToys">All Toys</ActiveLink>
-                  <ActiveLink to="/myToys">My Toys</ActiveLink>
-                  <ActiveLink to="/addToy">Add a Toy</ActiveLink>
+                  {user && <ActiveLink to="/myToys">My Toys</ActiveLink>}
+                  {user && <ActiveLink to="/addToy">Add a Toy</ActiveLink>}
                   <ActiveLink to="/blog">Blog</ActiveLink>
                 </div>
               </div>
