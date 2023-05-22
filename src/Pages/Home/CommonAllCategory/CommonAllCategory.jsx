@@ -2,17 +2,35 @@ import { useContext, useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import ToyDetails from "../../../Shared/ToyDetails/ToyDetails";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const CommonAllCategory = ({ toy }) => {
   // console.log(toy);
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const { pictureUrl, toyName, price, rating } = toy;
 
   const handleDetails = () => {
     if (user) setIsOpen(true);
-    else Navigate("/login");
+    // else navigate("/login");
+    else {
+      Swal.fire({
+        title: "Hey!!!",
+        text: "You have to log in first to view details",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Go to Login???",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("", "We are going Login page.", "success");
+          navigate("/login");
+        }
+      });
+    }
     console.log("click");
   };
   return (
@@ -35,7 +53,7 @@ const CommonAllCategory = ({ toy }) => {
           <span className="text-lg font-medium font-font4 text-secondary">
             Price
           </span>{" "}
-          : {price}
+          : ${price}
         </p>
         <div className="card-actions justify-end" onClick={handleDetails}>
           <AwesomeButton>Details</AwesomeButton>
