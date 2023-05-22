@@ -21,7 +21,7 @@ function Login() {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location.state);
+  console.log("++++", location?.state?.pathname);
 
   const handleSubmit = (event) => {
     event.preventDefault();

@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
   const auth = getAuth(app);
 
   const [loading, setLoading] = useState(true);
-
+  const [isOpen, setIsOpen] = useState(true);
   const [user, setUser] = useState();
   const createUser = (email, password) => {
     setLoading(true);
@@ -44,6 +44,8 @@ const AuthProvider = ({ children }) => {
     setUser,
     setLoading,
     loading,
+    isOpen,
+    setIsOpen,
   };
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
 };

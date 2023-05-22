@@ -165,8 +165,8 @@ export default function Navbar() {
             <div className="pt-2 pb-3 space-y-1 bg-primary">
               <ActiveLink to="/">Home</ActiveLink>
               <ActiveLink to="/allToys">All Toys</ActiveLink>
-              <ActiveLink to="/myToys">My Toys</ActiveLink>
-              <ActiveLink to="/addToy">Add a Toy</ActiveLink>
+              {user && <ActiveLink to="/myToys">My Toys</ActiveLink>}
+              {user && <ActiveLink to="/addToy">Add a Toy</ActiveLink>}
               <ActiveLink to="/blog">Blog</ActiveLink>
             </div>
           </Disclosure.Panel>

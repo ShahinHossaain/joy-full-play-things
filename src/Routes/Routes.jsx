@@ -9,6 +9,7 @@ import AllToys from "../Pages/AllToys/AllToys/AllToys";
 import AddToys from "../Pages/AddToys/AddToys";
 import MyToys from "../Pages/MyToys/MyToys";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ToyDetailsNew from "../Shared/ToyDetailsNew/ToyDetailsNew";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,14 @@ const router = createBrowserRouter([
             <MyToys></MyToys>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/toyDetails/:id",
+        element: <ToyDetailsNew></ToyDetailsNew>,
+        loader: ({ params }) =>
+          fetch(
+            `https://joy-full-play-things-server.vercel.app/toys/${params.id}`
+          ),
       },
     ],
   },

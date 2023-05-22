@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Banner from "../Banner/Banner";
 import Gallary from "../Gallary/Gallary";
 import ToyCategories from "../ToyCategories/ToyCategories";
@@ -6,6 +6,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Top5 from "../Top5/Top5";
 import Comment from "../Comment/Comment";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Home = () => {
   useEffect(() => {
@@ -14,6 +15,8 @@ const Home = () => {
       easing: "ease-in-out",
     });
   }, []);
+  const { setIsOpen } = useContext(AuthContext);
+  setIsOpen(true);
   return (
     <div>
       <Banner></Banner>

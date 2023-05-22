@@ -1,16 +1,18 @@
 import { useContext, useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
-import ToyDetails from "../../../Shared/ToyDetails/ToyDetails";
+// import ToyDetails from "../../../Shared/ToyDetails/ToyDetails";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+// import ToyDetailsNew from "../../../Shared/ToyDetailsNew/ToyDetailsNew";
 
 const CommonAllCategory = ({ toy }) => {
   // console.log(toy);
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
-  const { pictureUrl, toyName, price, rating } = toy;
+  const { pictureUrl, toyName, price, rating, _id } = toy;
+  // const location = useLocation();
 
   const handleDetails = () => {
     if (user) setIsOpen(true);
@@ -26,8 +28,9 @@ const CommonAllCategory = ({ toy }) => {
         confirmButtonText: "Go to Login???",
       }).then((result) => {
         if (result.isConfirmed) {
+          const pathname = `/toyDetails/${_id}`;
           Swal.fire("", "We are going Login page.", "success");
-          navigate("/login");
+          navigate("/login", { state: { pathname } });
         }
       });
     }
@@ -35,7 +38,11 @@ const CommonAllCategory = ({ toy }) => {
   };
   return (
     <div className="card card-side bg-primary shadow-xl">
-      {isOpen && <ToyDetails toy={toy} setIsOpen={setIsOpen}></ToyDetails>}
+      {/* {isOpen && <ToyDetails toy={toy} setIsOpen={setIsOpen}></ToyDetails>} */}
+      {isOpen && (
+        // <ToyDetailsNew toy={toy} setIsOpen={setIsOpen}></ToyDetailsNew>
+        <Navigate to={`/toyDetails/${_id}`}></Navigate>
+      )}
       <figure className="w-2/5">
         <img src={pictureUrl} alt="Movie" className="h-full w-full" />
       </figure>
