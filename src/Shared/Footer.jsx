@@ -16,27 +16,15 @@ const Footer = () => {
                 </span>
               </a>
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Resources
-                </h2>
-                <ul className="text-gray-600 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="https://flowbite.com/" className="hover:underline">
-                      Flowbite
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://tailwindcss.com/"
-                      className="hover:underline"
-                    >
-                      Tailwind CSS
-                    </a>
-                  </li>
-                </ul>
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-3">
+              <div className="mb-4 md:mb-0">
+                <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
+                <p>123 Toy Street</p>
+                <p>Toyland, ABC 12345</p>
+                <p>Email: info@toyshop.com</p>
+                <p>Phone: 123-456-7890</p>
               </div>
+
               <div>
                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                   Follow us
@@ -84,7 +72,7 @@ const Footer = () => {
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2023{" "}
               <a href="https://flowbite.com/" className="hover:underline">
-                Flowbite™
+                Joy Full Play Things™
               </a>
               . All Rights Reserved.
             </span>
@@ -163,6 +151,48 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      {/* <footer className="bg-gray-900 text-white py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-between items-center">
+            <div className="w-full md:w-1/3 lg:w-1/4 mb-4 md:mb-0">
+              <h2 className="text-2xl font-bold">Toy Shop</h2>
+              <p className="mt-4">
+                We bring joy to children with our amazing selection of toys!
+              </p>
+            </div>
+            <div className="w-full md:w-1/3 lg:w-1/4 mb-4 md:mb-0">
+              <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
+              <p>123 Toy Street</p>
+              <p>Toyland, ABC 12345</p>
+              <p>Email: info@toyshop.com</p>
+              <p>Phone: 123-456-7890</p>
+            </div>
+            <div className="w-full md:w-1/3 lg:w-1/4 mb-4 md:mb-0">
+              <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
+              <div className="flex space-x-4">
+                <a
+                  href="#"
+                  className="text-white hover:text-gray-400 transition duration-300"
+                >
+                  <i className="fab fa-facebook-square text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  className="text-white hover:text-gray-400 transition duration-300"
+                >
+                  <i className="fab fa-twitter-square text-xl"></i>
+                </a>
+                <a
+                  href="#"
+                  className="text-white hover:text-gray-400 transition duration-300"
+                >
+                  <i className="fab fa-instagram-square text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer> */}
     </div>
   );
 };

@@ -18,7 +18,7 @@ import "aos/dist/aos.css";
 const Gallary = () => {
   useEffect(() => {
     Aos.init({
-      duration: 1000,
+      duration: 500,
       easing: "ease-in-out",
     });
   }, []);

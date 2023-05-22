@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import ToyDetails from "../../../Shared/ToyDetails/ToyDetails";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { Navigate } from "react-router-dom";
 
 const CommonAllCategory = ({ toy }) => {
   // console.log(toy);
+  const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const { pictureUrl, toyName, price, rating } = toy;
 
   const handleDetails = () => {
-    setIsOpen(true);
+    if (user) setIsOpen(true);
+    else Navigate("/login");
     console.log("click");
   };
   return (
