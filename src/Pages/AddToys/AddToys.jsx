@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { AwesomeButton } from "react-awesome-button";
+import Swal from "sweetalert2";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
@@ -54,11 +55,20 @@ const AddToys = () => {
       body: JSON.stringify(toysInfo),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "New Toy is added to My Toys",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
   };
 
   return (
-    <div className="w-full md:max-w-6xl p-10 mx-auto bg-slate-200">
+    <div className="w-full md:max-w-6xl p-10 mx-auto bg-slate-200 text-gray-500">
       <form onSubmit={handleSubmit}>
         <div className="md:grid grid-cols-2 gap-5">
           <div className="mb-4">
@@ -75,6 +85,7 @@ const AddToys = () => {
               id="pictureUrl"
               value={pictureUrl}
               onChange={(e) => setPictureUrl(e.target.value)}
+              required
             />
           </div>
 
@@ -92,6 +103,7 @@ const AddToys = () => {
               id="toyName"
               value={toyName}
               onChange={(e) => setToyName(e.target.value)}
+              required
             />
           </div>
 
@@ -109,6 +121,7 @@ const AddToys = () => {
               id="sellerName"
               value={sellerName}
               onChange={(e) => setSellerName(e.target.value)}
+              required
             />
           </div>
 
@@ -126,6 +139,7 @@ const AddToys = () => {
               id="sellerEmail"
               value={sellerEmail}
               onChange={(e) => setSellerEmail(e.target.value)}
+              required
             />
           </div>
 
@@ -142,6 +156,7 @@ const AddToys = () => {
               id="subCategory"
               value={subCategory}
               onChange={(e) => setSubCategory(e.target.value)}
+              required
             >
               <option value="">Select a sub-category</option>
               <option value="Math Toys">Math Toys</option>
@@ -165,6 +180,7 @@ const AddToys = () => {
               id="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+              required
             />
           </div>
 
@@ -182,6 +198,7 @@ const AddToys = () => {
               id="rating"
               value={rating}
               onChange={(e) => setRating(e.target.value)}
+              required
             />
           </div>
 
@@ -199,6 +216,7 @@ const AddToys = () => {
               id="availableQuantity"
               value={availableQuantity}
               onChange={(e) => setAvailableQuantity(e.target.value)}
+              required
             />
           </div>
         </div>
@@ -217,6 +235,7 @@ const AddToys = () => {
             rows="4"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required
           ></textarea>
         </div>
 

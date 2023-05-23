@@ -28,7 +28,7 @@ const MyToys = () => {
         ></MyToysModal>
       )}
       {toys && (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 my-12">
           {toys.map((toy, index) => (
             <SingleMyToys
               key={index}

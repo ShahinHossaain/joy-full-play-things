@@ -1,17 +1,37 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { AwesomeButton } from "react-awesome-button";
+import Swal from "sweetalert2";
 
 const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
-  const [price, setPrice] = useState("");
-  const [availableQuantity, setQuantity] = useState("");
-  const [description, setDescription] = useState("");
-
-  console.log("&&&", updateModalInfo);
+  let [price, setPrice] = useState("");
+  let [availableQuantity, setQuantity] = useState("");
+  let [description, setDescription] = useState("");
+  let data;
+  const desRef = useRef(null);
+  let p, q, d;
+  if (
+    updateModalInfo.price &&
+    updateModalInfo.availableQuantity &&
+    updateModalInfo.availableQuantity
+  ) {
+    p = updateModalInfo.price;
+    q = updateModalInfo.availableQuantity;
+    d = updateModalInfo.description;
+  }
+  console.log("p,q,d", p, q, d);
 
   const handleUpdate = (e) => {
     // Handle update logic here
+
     e.preventDefault();
-    console.log(price, availableQuantity, description);
-    const data = { price, availableQuantity, description };
+
+    console.log("&&", price, availableQuantity, description);
+
+    if (!description) setDescription(d);
+
+    // }
+    data = { price, availableQuantity, description };
+    console.log(data, price, availableQuantity, description);
 
     fetch(
       `https://joy-full-play-things-server.vercel.app/toys/${updateModalInfo._id}`,
@@ -25,20 +45,22 @@ const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
       .then((data) => {
         setUpdated((previous) => !previous);
         console.log(data);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Toys is updated successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       });
 
-    setIsmodalOpen(false);
-  };
-
-  const handleCancel = () => {
-    // Handle cancel logic here
     setIsmodalOpen(false);
   };
 
   return (
     <form onSubmit={handleUpdate}>
       {/* Modal */}
-      <div className="fixed inset-0 flex items-center justify-center z-50">
+      <div className="fixed inset-0 flex items-center justify-center z-50 text-gray-500">
         <div className="modal-overlay fixed inset-0 bg-gray-500 opacity-75"></div>
 
         <div className="modal-container bg-white w-1/2 rounded shadow-lg z-50">
@@ -72,7 +94,6 @@ const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
                   value={price}
                   placeholder={updateModalInfo.price}
                   onChange={(e) => setPrice(e.target.value)}
-                  required
                 />
               </div>
               <div className="form-group">
@@ -85,7 +106,6 @@ const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
                   value={availableQuantity}
                   placeholder={updateModalInfo.availableQuantity}
                   onChange={(e) => setQuantity(e.target.value)}
-                  required
                 />
               </div>
               <div className="form-group">
@@ -97,7 +117,7 @@ const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
                   value={description}
                   placeholder={updateModalInfo.description}
                   onChange={(e) => setDescription(e.target.value)}
-                  required
+                  ref={desRef}
                 ></textarea>
               </div>
             </div>
@@ -109,21 +129,7 @@ const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
           </div>
 
           <div className="modal-footer flex justify-end px-4 py-2 bg-gray-200 rounded-b">
-            <button
-              type="button"
-              className="mr-2 px-4 py-2 bg-gray-500 text-white rounded"
-              onClick={handleCancel}
-              data-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              className="px-4 py-2 bg-blue-500 text-white rounded"
-              onClick={handleUpdate}
-            >
-              Update
-            </button>
+            <AwesomeButton onClick={handleUpdate}>Update</AwesomeButton>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { AwesomeButton } from "react-awesome-button";
 import Swal from "sweetalert2";
 
 const SingleMyToys = ({
@@ -106,12 +107,13 @@ const SingleMyToys = ({
         </div>
       </div>
       <div className="w-1/6">
-        <button className="btn btn-primary my-3" onClick={handleUpdate}>
-          Update
-        </button>
-        <button className="btn btn-primary" onClick={() => handleDelete(_id)}>
-          Delete
-        </button>
+        <div onClick={handleUpdate}>
+          <AwesomeButton>Update</AwesomeButton>
+        </div>
+
+        <div onClick={() => handleDelete(_id)} className="my-5">
+          <AwesomeButton> Delete </AwesomeButton>
+        </div>
       </div>
     </div>
   );
