@@ -9,7 +9,8 @@ import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../Provider/AuthProvider";
-import backgroundImage from "../assets/rainbow-vortex.svg";
+import backgroundImage from "../assets/page-turner.svg";
+import { Helmet } from "react-helmet";
 
 function Register() {
   const { createUser, auth, user } = useContext(AuthContext);
@@ -82,6 +83,9 @@ function Register() {
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
+      <Helmet>
+        <title>Joy Full Play Things | Register</title>
+      </Helmet>
       <div>
         <img
           src="https://freesvg.org/img/senator-access.png"
@@ -93,9 +97,11 @@ function Register() {
         className="w-full h-2/3 max-w-lg mt-10  md:ml-20 card shadow-lg bg-base-200 px-12 pb-10 pt-6 text-black"
         onSubmit={handleSubmit}
       >
-        <p className="text-center text-3xl font-bold mb-4">Register</p>
+        <p className="text-center text-5xl font-bold mb-4 text-secondary font-font1">
+          Register
+        </p>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
+          <label className="block text-secondary font-bold mb-2" htmlFor="name">
             Name
           </label>
           <input
@@ -110,7 +116,10 @@ function Register() {
           />
         </div>
         <div className="mb-4 relative">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+          <label
+            className="block text-secondary font-bold mb-2"
+            htmlFor="email"
+          >
             Email
           </label>
           <input
@@ -147,7 +156,7 @@ function Register() {
 
         <div className="mb-4 relative">
           <label
-            className="block text-gray-700 font-bold mb-2"
+            className="block text-secondary font-bold mb-2"
             htmlFor="password"
           >
             Password
@@ -185,7 +194,7 @@ function Register() {
 
         <div className="mb-4 relative">
           <label
-            className="block text-gray-700 font-bold mb-2"
+            className="block text-secondary font-bold mb-2"
             htmlFor="password"
           >
             Photo URL
@@ -203,10 +212,7 @@ function Register() {
         </div>
         {!error && !emailError && (
           <div className="flex items-center justify-center">
-            <AwesomeButton type="danger" size="medium">
-              {" "}
-              Register
-            </AwesomeButton>
+            <AwesomeButton size="medium"> Register</AwesomeButton>
           </div>
         )}
         {(error || emailError) && (
@@ -219,11 +225,12 @@ function Register() {
             </button>
           </div>
         )}
-        <p>
+        <p className="text-secondary">
           Have an account{" "}
           <Link to="/login" className="text-blue-500 underline">
             Login
-          </Link>
+          </Link>{" "}
+          Now...
         </p>
       </form>
     </div>

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { AwesomeButton } from "react-awesome-button";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
@@ -69,6 +70,9 @@ const AddToys = () => {
 
   return (
     <div className="w-full md:max-w-6xl p-10 mx-auto bg-slate-200 text-gray-500">
+      <Helmet>
+        <title>Joy Full Play Things | Add Toys</title>
+      </Helmet>
       <form onSubmit={handleSubmit}>
         <div className="md:grid grid-cols-2 gap-5">
           <div className="mb-4">

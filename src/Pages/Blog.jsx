@@ -1,14 +1,18 @@
 import { useRef } from "react";
+import { Helmet } from "react-helmet";
 
 const Blogs = () => {
   const ref = useRef();
   return (
     <div className="mt-10">
+      <Helmet>
+        <title>Joy Full Play Things | Blog</title>
+      </Helmet>
       <div ref={ref}>
         <p className="text-center text-3xl md:text-5xl font-sans font-bold">
           <span className="text-secondary">F</span>AQ
         </p>
-        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-primary ">
+        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-gray-700 hover:bg-gray-600 ">
           <p className="text-secondary text-lg md:text-xl font-mono font-medium mb-4">
             1)) What is an access token and refresh token? How do they work and
             where should we store them on the client-side?
@@ -51,7 +55,7 @@ const Blogs = () => {
             being exposed to malicious actors.
           </p>
         </div>
-        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-primary">
+        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-gray-700 hover:bg-gray-600">
           <p className="text-secondary text-lg md:text-xl font-mono font-medium mb-4">
             2)) Compare SQL and NoSQL databases?
           </p>
@@ -82,7 +86,7 @@ const Blogs = () => {
             on-the-fly without downtime.
           </p>
         </div>
-        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-primary">
+        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-gray-700 hover:bg-gray-600">
           <p className="text-secondary text-lg md:text-xl font-mono font-medium mb-4">
             3))What is express js? What is Nest JS (google it)?
           </p>
@@ -109,7 +113,7 @@ const Blogs = () => {
             modern JavaScript and TypeScript best practices.
           </p>
         </div>
-        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-primary">
+        <div className="card shadow-lg p-4 md:p-10 m-4 md:m-10 bg-gray-700 hover:bg-gray-600">
           <p className="text-secondary text-lg md:text-xl font-mono font-medium mb-4">
             4)) What is MongoDB aggregate and how does it work (google it)?
           </p>

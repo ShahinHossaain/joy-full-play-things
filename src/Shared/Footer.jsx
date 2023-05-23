@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-white dark:bg-gray-900 mt-32">
+      <footer className="bg-white dark:bg-gray-900 ">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
@@ -11,7 +11,7 @@ const Footer = () => {
                   src="https://i.ibb.co/8zm473R/geometry-minimal-cube-logo-concept-260nw-1048900538.jpg"
                   alt="Logo"
                 />
-                <span className="self-center ml-5 font-font1 text-4xl font-semibold whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-secondary">
+                <span className="self-center ml-5 font-font1 text-2xl md:text-4xl font-semibold whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-secondary">
                   Joy full Play Things
                 </span>
               </a>

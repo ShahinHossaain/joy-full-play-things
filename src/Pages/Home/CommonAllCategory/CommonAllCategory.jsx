@@ -37,7 +37,7 @@ const CommonAllCategory = ({ toy }) => {
     console.log("click");
   };
   return (
-    <div className="card card-side bg-primary shadow-xl">
+    <div className="card card-side bg-gray-700 hover:bg-gray-600 shadow-xl">
       {/* {isOpen && <ToyDetails toy={toy} setIsOpen={setIsOpen}></ToyDetails>} */}
       {isOpen && (
         // <ToyDetailsNew toy={toy} setIsOpen={setIsOpen}></ToyDetailsNew>

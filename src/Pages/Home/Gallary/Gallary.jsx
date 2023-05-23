@@ -32,7 +32,7 @@ const Gallary = () => {
   }, []);
   return (
     <div
-      className="flex flex-col md:flex-row items-center overflow-hidden bg-primary mt-12 rounded-2xl card shadow-2xl"
+      className="flex flex-col md:flex-row items-center overflow-hidden bg-gray-700 hover:bg-gray-600 mt-12 rounded-2xl card shadow-2xl"
       data-aos="fade-up"
     >
       <div className="mx-auto my-5" data-aos="fade-up">

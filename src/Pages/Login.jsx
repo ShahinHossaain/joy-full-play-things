@@ -9,7 +9,11 @@ import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { AuthContext } from "../Provider/AuthProvider";
-import backgroundImage from "../assets/rainbow-vortex.svg";
+// import backgroundImage from "../assets/rainbow-vortex.svg";
+import { Helmet } from "react-helmet";
+
+import backgroundImage1 from "../assets/page-turner.svg";
+
 function Login() {
   const [error, setError] = useState("");
   const { signInUser, auth } = useContext(AuthContext);
@@ -60,25 +64,33 @@ function Login() {
 
   return (
     <div
-      className="flex flex-col-reverse  md:flex-row-reverse justify-center items-center h-1/2 bg-cover"
+      className="flex flex-col-reverse  md:flex-row-reverse justify-center items-center bg-cover"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${backgroundImage1})`,
       }}
     >
+      <Helmet>
+        <title>Joy Full Play Things | Login</title>
+      </Helmet>
       <div>
         <img
-          src="https://freesvg.org/img/senator-access.png"
+          src="https://iconscout.com/lottie/login-security-7546636"
           alt=""
           className="h-1/3 p-16"
         />
       </div>
       <form
-        className="w-full h-2/3 max-w-lg mt-10 md:ml-20 card shadow-lg bg-base-200 px-12 pb-10 pt-6 text-black"
+        className="w-full h-2/3 max-w-lg mt-10 md:ml-20 card shadow-lg bg-gray-700 hover:bg-gray-600 px-12 pb-10 pt-6 text-black mb-24"
         onSubmit={handleSubmit}
       >
-        <p className="text-center text-3xl font-bold mb-4">Log In</p>
+        <p className="text-center text-5xl text-secondary font-font1 font-bold mb-4">
+          Log In
+        </p>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+          <label
+            className="block text-secondary font-bold mb-2"
+            htmlFor="email"
+          >
             Email
           </label>
           <input
@@ -94,7 +106,7 @@ function Login() {
         </div>
         <div className="mb-4 relative">
           <label
-            className="block text-gray-700 font-bold mb-2"
+            className="block text-secondary font-bold mb-2"
             htmlFor="password"
           >
             Password
@@ -122,12 +134,9 @@ function Login() {
           </button>
         </div>
         <div className="flex items-center justify-center">
-          <AwesomeButton type="danger" size="medium">
-            {" "}
-            Sign In
-          </AwesomeButton>
+          <AwesomeButton size="medium"> Sign In</AwesomeButton>
         </div>
-        <p>
+        <p className="text-secondary">
           Not have an account{" "}
           <Link
             to="/register"
@@ -147,7 +156,7 @@ function Login() {
         <div className="flex mt-4">
           <button
             onClick={handleGoogleSingIn}
-            className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-orange-600 to-yellow-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white  focus:ring-4 focus:outline-none focus:ring-blue-300"
+            className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-primary to-secondary group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white  focus:ring-4 focus:outline-none focus:ring-blue-300"
           >
             <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white  rounded-md group-hover:bg-opacity-0">
               <div className="flex items-center gap-2">

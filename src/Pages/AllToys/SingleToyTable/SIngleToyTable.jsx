@@ -36,7 +36,7 @@ const SIngleToyTable = ({ toy }) => {
     console.log("click");
   };
   return (
-    <tr>
+    <tr className="text-primary">
       {open && (
         <td>
           {open && (
@@ -47,10 +47,13 @@ const SIngleToyTable = ({ toy }) => {
       <td>{sellerName}</td>
       <td>{toyName}</td>
       <td>{subCategory}</td>
-      <td>{price}</td>
+      <td>$ {price}</td>
       <td className="pl-16">{availableQuantity}</td>
       <td>
-        <div className="card-actions justify-end" onClick={handleDetails}>
+        <div
+          className="card-actions justify-end relative right-16"
+          onClick={handleDetails}
+        >
           <AwesomeButton>Details</AwesomeButton>
         </div>
       </td>

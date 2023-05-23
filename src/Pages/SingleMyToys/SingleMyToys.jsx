@@ -58,7 +58,7 @@ const SingleMyToys = ({
     });
   };
   return (
-    <div className="flex flex-col gap-10 items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-6xl mx-auto hover:bg-gray-100   dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <div className="flex flex-col w-full h-72 gap-10 items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-6xl mx-auto hover:bg-gray-100   dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
       <div className="md:w-1/3 w-5/6 mt-5 md:mt-0 h-64 md:h-full">
         <img
           src={pictureUrl}
@@ -81,7 +81,7 @@ const SingleMyToys = ({
         </div>
         <div className="flex gap-3">
           <div>Price : </div>
-          <div>{price}</div>
+          <div>${price}</div>
         </div>
         <div className="flex gap-3">
           <div>Category : </div>

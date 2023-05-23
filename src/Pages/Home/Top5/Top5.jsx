@@ -1,15 +1,30 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const Top5 = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      easing: "ease-in-out",
+    });
+  }, []);
   return (
     <div>
-      <div className="text-center mt-16">
-        <p className="text-3xl md:text-4xl font-bold mb-10">
-          <span className="text-center text-5xl  font-bold font-font3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+      <div className="text-center mt-32 mx-16">
+        <p
+          data-aos="fade-down"
+          className="inline-block text-3xl bg-primary md:text-4xl font-bold mb-10 p-4 rounded-2xl"
+        >
+          <span className="text-center text-5xl  font-bold font-font3 text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-secondary ">
             Top Five Toy
           </span>
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-1 md:gap-20">
-          <div className="rounded-lg shadow-lg overflow-hidden py-5 bg-primary text-white">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-1 md:gap-10">
+          <div
+            data-aos="fade-up"
+            className="rounded-lg shadow-lg overflow-hidden py-5 bg-gray-700 hover:bg-gray-600 text-white"
+          >
             <img
               src="https://freesvg.org/storage/img/thumb/1275849091.png"
               alt="Placeholder"
@@ -20,7 +35,10 @@ const Top5 = () => {
               <p className=" text-sm"></p>
             </div>
           </div>
-          <div className="rounded-lg shadow-lg overflow-hidden py-5 bg-primary text-white">
+          <div
+            data-aos="fade-up"
+            className="rounded-lg shadow-lg overflow-hidden py-5 bg-gray-700 hover:bg-gray-600 text-white"
+          >
             <img
               src="https://freesvg.org/storage/img/thumb/7654321.png"
               alt="Placeholder"
@@ -31,7 +49,7 @@ const Top5 = () => {
               <p className=" text-sm"></p>
             </div>
           </div>
-          <div className="rounded-lg shadow-lg overflow-hidden py-5 bg-primary text-white">
+          <div className="rounded-lg shadow-lg overflow-hidden py-5 bg-gray-700 hover:bg-gray-600 text-white">
             <img
               src="https://freesvg.org/storage/img/thumb/nicubunu_Toy_rocket.png"
               alt="Placeholder"
@@ -42,7 +60,10 @@ const Top5 = () => {
               <p className=" text-sm"></p>
             </div>
           </div>
-          <div className="rounded-lg shadow-lg overflow-hidden py-5 bg-primary text-white">
+          <div
+            data-aos="fade-up"
+            className="rounded-lg shadow-lg overflow-hidden py-5 bg-gray-700 hover:bg-gray-600 text-white"
+          >
             <img
               src="https://freesvg.org/storage/img/thumb/Upload-multiple-files-request-2017031438.png"
               alt="Placeholder"
@@ -53,7 +74,10 @@ const Top5 = () => {
               <p className=" text-sm"></p>
             </div>
           </div>
-          <div className="rounded-lg shadow-lg overflow-hidden py-5 bg-primary text-white">
+          <div
+            data-aos="fade-up"
+            className="rounded-lg shadow-lg overflow-hidden py-5 bg-gray-700 hover:bg-gray-600 text-white"
+          >
             <img
               src="https://freesvg.org/storage/img/thumb/rubik_s_cube_petri_lumme_01.png"
               alt="Placeholder"

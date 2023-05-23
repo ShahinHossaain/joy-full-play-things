@@ -8,9 +8,11 @@ import ScienceCategoryToys from "../ScienceCategoryToys/ScienceCategoryToys";
 const ToyCategories = () => {
   return (
     <div className="text-center mt-32">
-      <p className="text-center text-6xl font-bold font-font3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-12">
-        Shop By Category
-      </p>
+      <div className="bg-primary inline-block mb-16 p-5 rounded-2xl">
+        <p className="text-center text-6xl font-bold font-font4 text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-secondary  ">
+          Shop By Category
+        </p>
+      </div>
       <Tabs>
         <TabList className="font-font2 font-bold text-lg mb-5 text-black bg-accent mx-12 rounded-2xl">
           <Tab>Math Toys</Tab>

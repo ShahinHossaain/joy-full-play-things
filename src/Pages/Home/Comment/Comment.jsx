@@ -1,7 +1,7 @@
 const Comment = () => {
   return (
     <div>
-      <div className="mx-3 md:mx-20 card shadow-lg p-3 md:p-10 bg-base-200 mt-24">
+      <div className="mx-3 md:mx-20 card shadow-lg p-3 md:p-10 bg-base-200 mt-24 mb-32">
         <p className="text-3xl md:text-5xl text-center o_font3 tracking-2 font-bold font-serif ">
           <span className="text-center text-5xl font-bold font-font3 text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-secondary mb-12">
             WebSite Details{" "}
@@ -21,7 +21,7 @@ const Comment = () => {
               30
             </p>
             <p className="text-lg font-bold transition duration-200 ease-in-out hover:text-gray-100">
-              recipes
+              Toys
             </p>
           </div>
           <div className="bg-slate-300 px-4 md:px-8 py-2 md:py-4 w-full text-center transition duration-200 ease-in-out hover:bg-gray-500">

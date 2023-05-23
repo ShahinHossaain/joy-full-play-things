@@ -3,9 +3,11 @@ import { AwesomeButton } from "react-awesome-button";
 import Swal from "sweetalert2";
 
 const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
-  let [price, setPrice] = useState("");
-  let [availableQuantity, setQuantity] = useState("");
-  let [description, setDescription] = useState("");
+  let [price, setPrice] = useState(updateModalInfo.price);
+  let [availableQuantity, setQuantity] = useState(
+    updateModalInfo.availableQuantity
+  );
+  let [description, setDescription] = useState(updateModalInfo.description);
   let data;
   const desRef = useRef(null);
   let p, q, d;
@@ -92,7 +94,6 @@ const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
                   name="price"
                   className="form-control bg-slate-300 w-full p-2"
                   value={price}
-                  placeholder={updateModalInfo.price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
@@ -104,7 +105,6 @@ const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
                   name="quantity"
                   className="form-control bg-slate-300 w-full p-2"
                   value={availableQuantity}
-                  placeholder={updateModalInfo.availableQuantity}
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
@@ -115,7 +115,6 @@ const MyToysModal = ({ setIsmodalOpen, updateModalInfo, setUpdated }) => {
                   name="description"
                   className="form-control bg-slate-300 w-full p-4 h-40"
                   value={description}
-                  placeholder={updateModalInfo.description}
                   onChange={(e) => setDescription(e.target.value)}
                   ref={desRef}
                 ></textarea>
